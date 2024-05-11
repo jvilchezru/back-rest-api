@@ -1,4 +1,4 @@
-import { TOKEN_SECRET } from '../config';
+import { TOKEN_SECRET } from '../config.js';
 import jwt from 'jsonwebtoken';
 
 export function createAccessToken(payload) {
@@ -7,7 +7,7 @@ export function createAccessToken(payload) {
             payload,
             TOKEN_SECRET,
             {
-                expiresIn: 'id'
+                expiresIn: '1d'
             },
             (err, token) => {
                 if (err) reject(err);
